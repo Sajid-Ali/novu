@@ -29,7 +29,6 @@ export class DeleteNotification {
 
     const message = await this.messageRepository.findOne({
       _environmentId: command.environmentId,
-      _subscriberId: subscriber._id,
       _id: command.notificationId,
       contextKeys: command.contextKeys,
     });
