@@ -1159,6 +1159,7 @@ export class MessageRepository extends BaseRepository<MessageDBModel, MessageEnt
     for (const chunk of chunks) {
       const query: MessageQuery & EnforceEnvId = {
         _environmentId: environmentId,
+        _subscriberId: subscriberId,
         _id: {
           $in: chunk.map((id) => new Types.ObjectId(id)),
         },
